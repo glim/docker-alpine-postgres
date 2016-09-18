@@ -3,7 +3,7 @@ FROM alpine:3.4
 COPY SHA256SUMS /root
 
 RUN echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
-    apk update && apk add curl "postgresql<9.6" "postgresql-contrib<9.6" && \
+    apk --update upgrade && apk add curl "postgresql<9.6" "postgresql-contrib<9.6" && \
     mkdir /docker-entrypoint-initdb.d && \
     curl -o /root/gosu-amd64 -sSL "https://github.com/tianon/gosu/releases/download/1.9/gosu-amd64" && \
     cd /root && sha256sum -c /root/SHA256SUMS && cd .. && \
