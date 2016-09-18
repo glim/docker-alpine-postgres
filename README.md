@@ -14,7 +14,6 @@ $ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 alpine-postgres     latest              82d0ddb748fd        About an hour ago   27.35 MB
 alpine              latest              70c557e50ed6        5 weeks ago         4.798 MB
-percona             latest              70588d0c4cd4        4 weeks ago         308.6 MB
 postgres            latest              6d6a71f8528e        4 weeks ago         265.1 MB
 ```
 
@@ -26,9 +25,9 @@ $ make build
 
 # DockerHub
 
-This image is published on DockerHub as `docker pull kiasaki/alpine-postgres`.
+This image is published on DockerHub as `docker pull ivlis/alpine-postgres`.
 
-[Click here to see it's DockerHub homepage](https://hub.docker.com/r/kiasaki/alpine-postgres/)
+[Click here to see it's DockerHub homepage](https://hub.docker.com/r/ivlis/alpine-postgres/)
 
 # Usage
 
