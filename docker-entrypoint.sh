@@ -85,6 +85,8 @@ if [ "$1" = 'postgres' ]; then
 
 		gosu postgres pg_ctl -D "$PGDATA" -m fast -w stop
 
+		sed -ri "s!^#?(listen_addresses)\s*=\s*\S+.*!\1 = '*'!" ${PGDATA}/postgresql.conf
+
 		echo
 		echo 'PostgreSQL init process complete; ready for start up.'
 		echo
