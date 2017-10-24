@@ -1,7 +1,11 @@
 FROM postgres:alpine
-RUN apk add --update --no-cache gcc musl-dev make py-pip curl && \
-    pip install pgxnclient && \
+RUN apk add --update --no-cache gcc musl-dev make curl && \
     su - postgres && \
-    pgxnclient install temporal_tables && \
-    apk del py-pip curl gcc musl-dev make && \
+    cd /tmp && \
+    curl -L https://github.com/arkhipov/temporal_tables/archive/master.tar.gz > master.tar.gz && \
+    tar xvf master.tar.gz && \
+    cd temporal_tables-master && \
+    make && \
+    make install && \
+    apk del curl gcc musl-dev make && \
     rm -rf /var/cache/apk/*
